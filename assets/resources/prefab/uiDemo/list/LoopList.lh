@@ -1,0 +1,65 @@
+{
+  "_$ver": 1,
+  "_$id": "k6qwf1v7pl",
+  "_$type": "View",
+  "name": "View",
+  "width": 1000,
+  "height": 600,
+  "mouseEnabled": true,
+  "_$comp": [
+    {
+      "_$type": "5856a0ef-2630-47da-be88-8df538951e76",
+      "scriptPath": "../src/scence/uiDemo/list/LoopListRT.ts",
+      "hList": {
+        "_$ref": "hvp85eag"
+      }
+    }
+  ],
+  "_$child": [
+    {
+      "_$id": "hvp85eag",
+      "_$type": "List",
+      "name": "List",
+      "width": 1000,
+      "height": 512,
+      "mouseEnabled": true,
+      "bgColor": "#f1efdf",
+      "repeatX": 3,
+      "repeatY": 1,
+      "elasticEnabled": true,
+      "spaceX": 110,
+      "scrollType": 1,
+      "selectEnable": true,
+      "disableStopScroll": true,
+      "itemRender": {
+        "_$type": "any",
+        "value": {
+          "_$ver": 1,
+          "_$id": "9262dkmc",
+          "_$type": "Box",
+          "name": "Box",
+          "width": 234,
+          "height": 512,
+          "mouseEnabled": true,
+          "_$child": [
+            {
+              "_$id": "l8sum3qm",
+              "_$type": "Image",
+              "name": "icon",
+              "x": 128,
+              "y": 256,
+              "width": 256,
+              "height": 256,
+              "pivotX": 128,
+              "pivotY": 128,
+              "anchorX": 0.5,
+              "anchorY": 0.5,
+              "skin": "resources/UI/role/r0.png",
+              "sizeGrid": "4,4,4,4,0"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

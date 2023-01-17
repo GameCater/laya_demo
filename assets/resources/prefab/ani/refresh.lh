@@ -1,0 +1,40 @@
+{
+  "_$ver": 1,
+  "_$id": "kdnrf3s6fh",
+  "_$type": "Box",
+  "name": "DefaultNode",
+  "x": 28,
+  "y": 28,
+  "width": 56,
+  "height": 56,
+  "pivotX": 28,
+  "pivotY": 28,
+  "anchorX": 0.5,
+  "anchorY": 0.5,
+  "_$comp": [
+    {
+      "_$type": "Animator2D",
+      "controller": {
+        "_$uuid": "1dec480f-ade8-4ec6-9fae-20b172343653",
+        "_$type": "AnimationController2D"
+      },
+      "controllerLayers": []
+    }
+  ],
+  "_$child": [
+    {
+      "_$id": "35giagmb",
+      "_$type": "Image",
+      "name": "Image",
+      "x": 28,
+      "y": 25,
+      "width": 56,
+      "height": 56,
+      "pivotX": 28,
+      "pivotY": 28,
+      "anchorX": 0.5,
+      "anchorY": 0.5,
+      "skin": "resources/UI/images/comp/loading_06.png"
+    }
+  ]
+}
