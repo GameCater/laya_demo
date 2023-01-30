@@ -26,6 +26,8 @@ export default class BagListRT extends BagListRTBase {
                 //绑定单元格的鼠标事件
                 this.bagList.mouseHandler = new Laya.Handler(this, this.onListMouse);
 
+                // alo repeatY设置的比背包数据高度小的话每垂直间隔repeatY个单位的元素会显示紊乱（处于选中状态）
+                this.bagList.repeatY = Math.ceil(_json.bagList.length / this.bagList.repeatX);
                 //不使用皮肤，但有滚动条效果
                 this.bagList.vScrollBarSkin = "";
             }

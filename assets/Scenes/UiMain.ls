@@ -131,7 +131,7 @@
       "mouseEnabled": true,
       "top": 113,
       "bottom": 20,
-      "selectedIndex": 1,
+      "selectedIndex": 0,
       "_$child": [
         {
           "_$id": "uipg6np1",
@@ -139,7 +139,6 @@
           "name": "item0",
           "width": 1334,
           "height": 617,
-          "visible": false,
           "mouseEnabled": true,
           "left": 0,
           "right": 0,
@@ -564,6 +563,7 @@
           "name": "item1",
           "width": 1334,
           "height": 617,
+          "visible": false,
           "mouseEnabled": true,
           "left": 0,
           "right": 0,

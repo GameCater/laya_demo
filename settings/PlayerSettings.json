@@ -23,13 +23,14 @@
     "laya.physics3D": true,
     "laya.physics3D.wasm": false
   },
-  "stat": false,
+  "stat": true,
   "startupScene": "Scenes/Loading.ls",
   "2D": {
     "FPS": 60,
     "isAntialias": true,
     "useRetinalCanvas": true,
-    "webGL2D_MeshAllocMaxMem": true
+    "webGL2D_MeshAllocMaxMem": true,
+    "isAlpha": false
   },
   "3D": {
     "enableStaticBatch": true,
@@ -43,6 +44,13 @@
       "x": 12,
       "y": 12,
       "z": 12
-    }
-  }
+    },
+    "useBVHCull": false,
+    "BVH_max_SpatialCount": 7,
+    "BVH_limit_size": 32,
+    "BVH_Min_Build_nums": 10
+  },
+  "spineVersion": "3.8",
+  "vConsole": false,
+  "alertGlobalError": false
 }

@@ -33,12 +33,12 @@
       "name": "bagList",
       "x": 49,
       "y": 120,
-      "width": 415,
-      "height": 600,
+      "width": 527,
+      "height": 585,
       "mouseEnabled": true,
       "top": 120,
-      "bottom": 30,
-      "repeatX": 4,
+      "bottom": 45,
+      "repeatX": 5,
       "repeatY": 6,
       "elasticEnabled": true,
       "spaceX": 5,
@@ -73,7 +73,7 @@
               "height": 100,
               "scaleX": 0.7,
               "scaleY": 0.7,
-              "skin": "resources/UI/images/bag/8.png"
+              "skin": "res://d0378049-2bc5-4e57-9871-19d78a385911"
             },
             {
               "_$id": "lsl1cl3m",

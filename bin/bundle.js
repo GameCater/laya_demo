@@ -20,11 +20,12 @@ var _regClass = window._regClass;
 var _dummyRegClass = Laya.regClass();
 function __$decorate(assetId, codePath) {
     return function(...args) {
-        if(args[0][0] == _dummyRegClass) {
-            if(_regClass)
-                args[0][0] = _regClass(assetId, codePath);
+        let i = args[0].indexOf(_dummyRegClass);
+        if (i != -1) {
+            if (_regClass)
+                args[0][i] = _regClass(assetId, codePath);
             else
-                args[0][0] = function(constructor) { Laya.ClassUtils.regClass(assetId, constructor); };
+                args[0][i] = function(constructor) { Laya.ClassUtils.regClass(assetId, constructor); };
         }
         return __decorate(...args);
     }
@@ -872,9 +873,50 @@ function __$decorate(assetId, codePath) {
     __metadata("design:paramtypes", [])
   ], UiMainRT);
 
-  // E:/projects/laya3/demo_1_2d/src/script/mouse/BgImg.ts
-  var __decorate15 = __$decorate("73bd7e32-83f6-448c-82ad-d0407e39c883", "../src/script/mouse/BgImg.ts");
+  // E:/projects/laya3/demo_1_2d/src/script/tween/Folded.ts
+  var __decorate15 = __$decorate("84f93029-0bca-4136-9e05-e1291f135410", "../src/script/tween/Folded.ts");
   var { regClass: regClass15, property: property15 } = Laya;
+  var Folded = /* @__PURE__ */ __name(class Folded2 extends Laya.Script {
+    constructor() {
+      super();
+      this.isOpen = true;
+    }
+    onEnable() {
+      this.toolbarBG = this.owner.parent;
+      this._owner = this.owner;
+      this.menu = this.owner.parent.getChildByName("menu");
+    }
+    onMouseDown(e) {
+      e.stopPropagation();
+      if (this.isOpen) {
+        Laya.Tween.to(this.toolbarBG, { width: 106 }, 1e3, Laya.Ease.strongOut);
+        Laya.Tween.to(this._owner, { x: 52, rotation: 540 }, 1e3, Laya.Ease.strongOut, Laya.Handler.create(this, () => {
+          this.isOpen = false;
+        }));
+        Laya.Tween.to(this.menu, { alpha: 0 }, 300, Laya.Ease.strongOut, Laya.Handler.create(this, () => {
+          this.menu.visible = false;
+        }));
+      } else {
+        Laya.Tween.to(this.toolbarBG, { width: 460 }, 1e3, Laya.Ease.strongOut);
+        Laya.Tween.to(this._owner, { x: 402, rotation: -360 }, 1e3, Laya.Ease.strongOut, Laya.Handler.create(this, () => {
+          this.isOpen = true;
+        }));
+        Laya.Tween.to(this.menu, { alpha: 1 }, 200, Laya.Ease.strongOut, Laya.Handler.create(this, () => {
+          this.menu.visible = true;
+        }));
+      }
+    }
+    onDisable() {
+    }
+  }, "Folded");
+  Folded = __decorate15([
+    regClass15(),
+    __metadata("design:paramtypes", [])
+  ], Folded);
+
+  // E:/projects/laya3/demo_1_2d/src/script/mouse/BgImg.ts
+  var __decorate16 = __$decorate("73bd7e32-83f6-448c-82ad-d0407e39c883", "../src/script/mouse/BgImg.ts");
+  var { regClass: regClass16, property: property16 } = Laya;
   var bgImg = /* @__PURE__ */ __name(class bgImg2 extends Laya.Script {
     constructor() {
       super(...arguments);
@@ -1007,13 +1049,13 @@ function __$decorate(assetId, codePath) {
       spTest.pos(point.x, point.y);
     }
   }, "bgImg");
-  bgImg = __decorate15([
-    regClass15()
+  bgImg = __decorate16([
+    regClass16()
   ], bgImg);
 
   // E:/projects/laya3/demo_1_2d/src/scence/uiDemo/interactive/ShapeDetection.ts
-  var __decorate16 = __$decorate("9da23b19-add9-433b-b01f-16576e269913", "../src/scence/uiDemo/interactive/ShapeDetection.ts");
-  var { regClass: regClass16, property: property16 } = Laya;
+  var __decorate17 = __$decorate("9da23b19-add9-433b-b01f-16576e269913", "../src/scence/uiDemo/interactive/ShapeDetection.ts");
+  var { regClass: regClass17, property: property17 } = Laya;
   var Rectangle = Laya.Rectangle;
   var ShapeDetection = /* @__PURE__ */ __name(class ShapeDetection2 extends Laya.Script {
     constructor() {
@@ -1197,8 +1239,8 @@ function __$decorate(assetId, codePath) {
       return Math.sqrt(dx * dx + dy * dy);
     }
   }, "ShapeDetection");
-  ShapeDetection = __decorate16([
-    regClass16()
+  ShapeDetection = __decorate17([
+    regClass17()
   ], ShapeDetection);
   var ShapeDetection_default = ShapeDetection;
 
@@ -1208,9 +1250,9 @@ function __$decorate(assetId, codePath) {
   __name(ShapeDetectionRTBase, "ShapeDetectionRTBase");
 
   // E:/projects/laya3/demo_1_2d/src/scence/uiDemo/interactive/ShapeDetectionRT.ts
-  var __decorate17 = __$decorate("46b18764-7fd2-44e0-ab17-95f115ad39b2", "../src/scence/uiDemo/interactive/ShapeDetectionRT.ts");
+  var __decorate18 = __$decorate("46b18764-7fd2-44e0-ab17-95f115ad39b2", "../src/scence/uiDemo/interactive/ShapeDetectionRT.ts");
   var ShapeDetectionRT_1;
-  var { regClass: regClass17, property: property17 } = Laya;
+  var { regClass: regClass18, property: property18 } = Laya;
   var ShapeDetectionRT = ShapeDetectionRT_1 = /* @__PURE__ */ __name(class ShapeDetectionRT2 extends ShapeDetectionRTBase {
     constructor() {
       super();
@@ -1275,15 +1317,15 @@ function __$decorate(assetId, codePath) {
       }
     }
   }, "ShapeDetectionRT");
-  ShapeDetectionRT = ShapeDetectionRT_1 = __decorate17([
-    regClass17(),
+  ShapeDetectionRT = ShapeDetectionRT_1 = __decorate18([
+    regClass18(),
     __metadata("design:paramtypes", [])
   ], ShapeDetectionRT);
   var ShapeDetectionRT_default = ShapeDetectionRT;
 
   // E:/projects/laya3/demo_1_2d/src/script/mouse/DragAndTips.ts
-  var __decorate18 = __$decorate("a166bb15-4828-43a0-aab7-2261fc3d58db", "../src/script/mouse/DragAndTips.ts");
-  var { regClass: regClass18, property: property18 } = Laya;
+  var __decorate19 = __$decorate("a166bb15-4828-43a0-aab7-2261fc3d58db", "../src/script/mouse/DragAndTips.ts");
+  var { regClass: regClass19, property: property19 } = Laya;
   var DragAndTips = /* @__PURE__ */ __name(class DragAndTips2 extends Laya.Script {
     constructor() {
       super(...arguments);
@@ -1311,20 +1353,20 @@ function __$decorate(assetId, codePath) {
       Laya.Mouse.cursor = "auto";
     }
   }, "DragAndTips");
-  __decorate18([
-    property18(),
+  __decorate19([
+    property19(),
     __metadata("design:type", String)
   ], DragAndTips.prototype, "tipsText", void 0);
-  DragAndTips = __decorate18([
-    regClass18()
+  DragAndTips = __decorate19([
+    regClass19()
   ], DragAndTips);
 
   // E:/projects/laya3/demo_1_2d/src/script/mouse/Joystick.ts
-  var __decorate19 = __$decorate("3e5e7efc-fa27-48b7-beee-60a7c5e5df47", "../src/script/mouse/Joystick.ts");
+  var __decorate20 = __$decorate("3e5e7efc-fa27-48b7-beee-60a7c5e5df47", "../src/script/mouse/Joystick.ts");
   var _a4;
   var _b3;
   var _c2;
-  var { regClass: regClass19, property: property19 } = Laya;
+  var { regClass: regClass20, property: property20 } = Laya;
   var Event2 = Laya.Event;
   var Panel = Laya.Panel;
   var Point = Laya.Point;
@@ -1428,71 +1470,30 @@ function __$decorate(assetId, codePath) {
       return Math.sqrt(dx * dx + dy * dy);
     }
   }, "Joystick");
-  __decorate19([
-    property19(),
+  __decorate20([
+    property20(),
     __metadata("design:type", typeof (_a4 = typeof Laya !== "undefined" && Laya.Prefab) === "function" ? _a4 : Object)
   ], Joystick.prototype, "roleAni", void 0);
-  __decorate19([
-    property19(),
+  __decorate20([
+    property20(),
     __metadata("design:type", String)
   ], Joystick.prototype, "runAniName", void 0);
-  __decorate19([
-    property19(),
+  __decorate20([
+    property20(),
     __metadata("design:type", String)
   ], Joystick.prototype, "standAniName", void 0);
-  __decorate19([
-    property19(),
+  __decorate20([
+    property20(),
     __metadata("design:type", typeof (_b3 = typeof Laya !== "undefined" && Laya.Sprite) === "function" ? _b3 : Object)
   ], Joystick.prototype, "gameMap", void 0);
-  __decorate19([
-    property19(),
+  __decorate20([
+    property20(),
     __metadata("design:type", typeof (_c2 = typeof Panel !== "undefined" && Panel) === "function" ? _c2 : Object)
   ], Joystick.prototype, "sceneWindow", void 0);
-  Joystick = __decorate19([
-    regClass19(),
-    __metadata("design:paramtypes", [])
-  ], Joystick);
-
-  // E:/projects/laya3/demo_1_2d/src/script/tween/Folded.ts
-  var __decorate20 = __$decorate("84f93029-0bca-4136-9e05-e1291f135410", "../src/script/tween/Folded.ts");
-  var { regClass: regClass20, property: property20 } = Laya;
-  var Folded = /* @__PURE__ */ __name(class Folded2 extends Laya.Script {
-    constructor() {
-      super();
-      this.isOpen = true;
-    }
-    onEnable() {
-      this.toolbarBG = this.owner.parent;
-      this._owner = this.owner;
-      this.menu = this.owner.parent.getChildByName("menu");
-    }
-    onMouseDown(e) {
-      e.stopPropagation();
-      if (this.isOpen) {
-        Laya.Tween.to(this.toolbarBG, { width: 106 }, 1e3, Laya.Ease.strongOut);
-        Laya.Tween.to(this._owner, { x: 52, rotation: 540 }, 1e3, Laya.Ease.strongOut, Laya.Handler.create(this, () => {
-          this.isOpen = false;
-        }));
-        Laya.Tween.to(this.menu, { alpha: 0 }, 300, Laya.Ease.strongOut, Laya.Handler.create(this, () => {
-          this.menu.visible = false;
-        }));
-      } else {
-        Laya.Tween.to(this.toolbarBG, { width: 460 }, 1e3, Laya.Ease.strongOut);
-        Laya.Tween.to(this._owner, { x: 402, rotation: -360 }, 1e3, Laya.Ease.strongOut, Laya.Handler.create(this, () => {
-          this.isOpen = true;
-        }));
-        Laya.Tween.to(this.menu, { alpha: 1 }, 200, Laya.Ease.strongOut, Laya.Handler.create(this, () => {
-          this.menu.visible = true;
-        }));
-      }
-    }
-    onDisable() {
-    }
-  }, "Folded");
-  Folded = __decorate20([
+  Joystick = __decorate20([
     regClass20(),
     __metadata("design:paramtypes", [])
-  ], Folded);
+  ], Joystick);
 
   // E:/projects/laya3/demo_1_2d/src/scence/uiDemo/animation/AtlasAniRT.ts
   var __decorate21 = __$decorate("b6691494-c820-422d-b415-9a72ea70b56b", "../src/scence/uiDemo/animation/AtlasAniRT.ts");
@@ -2023,6 +2024,7 @@ function __$decorate(assetId, codePath) {
           this.bagList.renderHandler = new Laya.Handler(this, this.onListRender);
           this.bagList.selectHandler = new Laya.Handler(this, this.onListSelect);
           this.bagList.mouseHandler = new Laya.Handler(this, this.onListMouse);
+          this.bagList.repeatY = Math.ceil(_json.bagList.length / this.bagList.repeatX);
           this.bagList.vScrollBarSkin = "";
         }
       });
